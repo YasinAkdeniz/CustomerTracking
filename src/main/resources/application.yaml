@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: CustomerTracking
+  datasource:
+    url: jdbc:mysql://localhost:3306/CustomerTracking
+    username: root
+    password: root123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
