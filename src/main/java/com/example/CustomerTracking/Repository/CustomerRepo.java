@@ -1,12 +1,9 @@
 package com.example.CustomerTracking.Repository;
 
-import com.example.CustomerTracking.Entity.User;
+import com.example.CustomerTracking.Entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
-public interface UserRepo extends JpaRepository<User, Long> {
-    Optional<User> findById(int uid);
+public interface    CustomerRepo extends JpaRepository<Customer, Long> {
 }

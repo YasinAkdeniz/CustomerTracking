@@ -22,7 +22,7 @@ public class WebSecurity {
                 .csrf(csrf -> csrf.disable())
                 .authorizeRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/user/**").permitAll()
+                                .requestMatchers("/customers/**").permitAll()
                                 .anyRequest().authenticated()
                 );
         return http.build();
