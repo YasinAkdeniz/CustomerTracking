@@ -1,42 +1,52 @@
-# Node.js / Electron
-/frontend/node_modules/
-frontend/dist/
-frontend/build/
+# General
 *.log
-
-# Electron binary cache
-*.asar
-*.bin
-*.exe
+*.tmp
+*.bak
 .DS_Store
 
-# IDE & OS files
+# Java / Maven / Spring Boot
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Node.js / Electron
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+*.asar
+*.exe
+*.bin
+
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# Spring Tool Suite
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA
 .idea/
-*.iml
-*.swp
-*.swo
-*.swn
-*.bak
-*.tmp
-Thumbs.db
-
-# npm
-package-lock.json
-npm-debug.log*
-
-# Java / Spring Boot
-/target/
-*.class
-*.jar
-*.war
-*.ear
-
-# IntelliJ / VS Code
-.vscode/
 *.iws
+*.iml
 *.ipr
-*.project
-*.classpath
-*.settings/
 
-# Mac
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code
+.vscode/
+
+# Git
+HELP.md
