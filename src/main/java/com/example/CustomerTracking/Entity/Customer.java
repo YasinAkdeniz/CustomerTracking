@@ -28,8 +28,5 @@ public class Customer {
     private String gender;
 
     @Column(name = "identity_number", length = 11)
-    private Integer IdentityNumber;
-
-    @Column(name = "note")
-    private String note;
+    private Long IdentityNumber;
 }

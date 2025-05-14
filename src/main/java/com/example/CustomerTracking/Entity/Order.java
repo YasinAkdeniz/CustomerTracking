@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "sales")
-public class Sale {
+@Table(name = "orders")
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +31,6 @@ public class Sale {
     @Column(name= "total_price", nullable = false)
     private Double totalPrice;
 
-    @Column(name = "sale_date")
-    private LocalDateTime saleDate;
+    @Column(name = "order_date")
+    private LocalDateTime orderDate;
 }

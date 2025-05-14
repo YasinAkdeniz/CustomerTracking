@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Yönetimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="initProducts()">
+
+<div class="container mt-4">
+    <div class="table-wrapper">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4>Ürünler</h4>
+            <button class="btn btn-primary" onclick="openProductModal()">Ürün Ekle</button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Marka</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th>Tür</th>
+                <th>İşlemler</th>
+            </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Ürün Modal -->
+<div class="modal fade" id="productModal" tabindex="-1">
+    <div class="modal-dialog">
+        <form id="productForm" class="modal-content">
+            <input type="hidden" id="productId" name="productId" />
+
+            <div class="modal-header">
+                <h5 class="modal-title">Ürün Bilgisi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Ad</label>
+                    <input type="text" id="productName" name="productName" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Marka</label>
+                    <select id="productBrand" name="productBrand" class="form-select" required></select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Fiyat</label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Stok</label>
+                    <input type="number" id="productStock" name="productStock" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Ürün Türü</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" value="OPTICAL" />
+                        <label class="form-check-label">Optik</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" value="SUNGLASSES" />
+                        <label class="form-check-label">Güneş Gözlüğü</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" value="LENS" />
+                        <label class="form-check-label">Lens</label>
+                    </div>
+                </div>
+                <div id="opticalSubType" class="mb-3 d-none">
+                    <label class="form-label">Optik Türü</label>
+                    <select class="form-select" name="opticalType" id="opticalType">
+                        <option value="Cam">Cam</option>
+                        <option value="Çerçeve">Çerçeve</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="productManager.js"></script>
+
+</body>
+</html>

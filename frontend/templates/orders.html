@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sipariş Yönetimi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Siparişler</h2>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">Yeni Sipariş</button>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Müşteri</th>
+            <th>Ürün</th>
+            <th>Adet</th>
+            <th>Toplam Tutar</th>
+            <th>Tarih</th>
+            <th>İşlemler</th>
+        </tr>
+        </thead>
+        <tbody id="orderTableBody"></tbody>
+    </table>
+</div>
+
+<!-- Sipariş Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form class="modal-content" id="orderForm">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Yeni Sipariş Ekle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" id="orderId">
+
+                <div class="mb-3">
+                    <label for="customerSearch" class="form-label">Müşteri Ara</label>
+                    <input type="text" class="form-control" id="customerSearch" placeholder="Müşteri adı..." oninput="searchCustomers(this.value)">
+                    <select class="form-select mt-2" id="customerSelect"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="productSearch" class="form-label">Ürün Ara</label>
+                    <input type="text" class="form-control" id="productSearch" placeholder="Ürün adı..." oninput="searchProducts(this.value)">
+                    <select class="form-select mt-2" id="productSelect"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantityInput" class="form-label">Adet</label>
+                    <input type="number" class="form-control" id="quantityInput" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="priceInput" class="form-label">Toplam Tutar</label>
+                    <input type="number" class="form-control" id="priceInput" step="0.01" required>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="orderManager.js"></script>
+</body>
+</html>
